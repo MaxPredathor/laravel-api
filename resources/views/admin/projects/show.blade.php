@@ -10,7 +10,7 @@
         <p class="text-white">{!! $htmlContent !!}</p>
         <img class="w-50" src="{{ asset('storage/' . $project->image) }}" alt="{{ $project->title }}">
         <div class="my-4">
-            <h4 class="d-inline">Technologies:</h4>
+            <h4 class="d-inline text-white">Technologies:</h4>
             {{-- @for ($i = 0; $i < count($project->technologies); $i++)
                 <div class="d-inline-block m-2 ">
                     <img style="width: 50px" src="{{ $project->technologies[$i] }}" alt="">
@@ -28,7 +28,7 @@
 
         @if ($project->category)
             <div class="my-4">
-                <h4 class="d-inline">Category:</h4>
+                <h4 class="d-inline text-white">Category:</h4>
                 <div class="text-white fs-5 px-3 d-inline">
                     {{ $project->category ? $project->category->name : 'Uncategorized' }}
                 </div>

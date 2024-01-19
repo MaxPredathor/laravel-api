@@ -47,7 +47,7 @@
                         </a>
                     </li>
                     {{-- <li><a href="{{ route('admin.technologies.index') }}">Technologies</a></li> --}}
-                </ul> --}}
+                </ul>
             </div>
             <div id="register-login">
                 <ul class="navbar-nav ml-auto">
