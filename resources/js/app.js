@@ -1,6 +1,7 @@
 import "./bootstrap";
 import "~resources/scss/app.scss";
 import * as bootstrap from "bootstrap";
+import Chart from "chart.js/auto";
 import.meta.glob(["../img/**", "../fonts/**"]);
 
 const buttons = document.querySelectorAll(".cancel-button");
@@ -29,4 +30,26 @@ previewImage.addEventListener("change", (event) => {
     ofReader.onload = function (oFREvent) {
         document.getElementById("uploadPreview").src = oFREvent.target.result;
     };
+});
+
+const ctx = document.getElementById("myChart");
+new Chart(ctx, {
+    type: "bar",
+    data: {
+        labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
+        datasets: [
+            {
+                label: "# of Votes",
+                data: [12, 19, 3, 5, 2, 3],
+                borderWidth: 1,
+            },
+        ],
+    },
+    options: {
+        scales: {
+            y: {
+                beginAtZero: true,
+            },
+        },
+    },
 });
