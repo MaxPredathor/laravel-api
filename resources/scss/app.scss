@@ -143,6 +143,8 @@ i {
         }
     }
 }
+#myChart,
+#myPieChart,
 #technologies-create,
 #technologies-edit,
 #technologies-show,
@@ -197,4 +199,17 @@ i {
             }
         }
     }
+}
+#myPieChart,
+#myChart {
+    padding: 50px;
+}
+
+#pie {
+    width: 44%;
+    display: inline-block;
+}
+#chart {
+    width: 55%;
+    display: inline-block;
 }

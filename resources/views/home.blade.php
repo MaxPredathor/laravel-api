@@ -1,8 +1,13 @@
 @extends('layouts.app')
 @section('content')
     <section class="container">
-        <canvas class="my-4" id="myChart"></canvas>
-        <canvas id="myPieChart"></canvas>
+        <div id="chart">
+            <canvas id="myChart"></canvas>
+        </div>
+        <div id="pie">
+            <canvas id="myPieChart"></canvas>
+        </div>
+
         <script>
             const ctx = document.getElementById('myChart');
 
