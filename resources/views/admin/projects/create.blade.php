@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
-    <section class="container">
-        <h1>Projects Create</h1>
+    <section id="projects-create" class="container">
+        <h1>Project Creation</h1>
         <form action="{{ route('admin.projects.store') }}" method="POST" enctype="multipart/form-data">
             @csrf
             <div class="mb-3">
@@ -44,8 +44,9 @@
                     <div class="invalid-feedback">{{ $message }}</div>
                 @enderror
             </div>
+            <label for="technologies" class="form-label">Technologies</label> <br>
             @foreach ($technologies as $technology)
-                <div class="d-inline-block mx-2">
+                <div class="d-inline-block mx-2" name="technologies">
                     <input name="technologies_id" id="technologies_id" value="{{ $technology->id }}" type="checkbox">
                     <img style="width: 50px" src="{{ $technology->image }}" alt="{{ $technology->name }}">
                 </div>

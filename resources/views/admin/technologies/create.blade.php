@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('content')
-    <section class="container">
+    <section id="technologies-create" class="container">
         <h1>Technologies Create</h1>
         <form action="{{ route('admin.technologies.store') }}" method="POST" enctype="multipart/form-data">
             @csrf

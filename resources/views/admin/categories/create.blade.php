@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
-    <section class="container">
-        <h1>Category Create</h1>
+    <section id="categories-create" class="container">
+        <h1>Category Creation</h1>
         <form action="{{ route('admin.categories.store') }}" method="POST" enctype="multipart/form-data">
             @csrf
             <div class="mb-3">

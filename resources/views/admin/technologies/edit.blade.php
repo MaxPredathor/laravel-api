@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('content')
-    <section class="container">
+    <section id="technologies-edit" class="container">
         <h1>Technologies {{ $technology->name }} </h1>
         <form action="{{ route('admin.technologies.update', $technology->slug) }}" method="POST"
             enctype="multipart/form-data">

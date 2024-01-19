@@ -30,7 +30,7 @@
             </div>
 
             <div id="nav">
-                <ul>
+                {{-- <ul>
                     <li>
                         <a href="{{ route('admin.projects.index') }}">
                             <h3>Projects</h3>
@@ -47,7 +47,7 @@
                         </a>
                     </li>
                     {{-- <li><a href="{{ route('admin.technologies.index') }}">Technologies</a></li> --}}
-                </ul>
+                </ul> --}}
             </div>
             <div id="register-login">
                 <ul class="navbar-nav ml-auto">
@@ -85,7 +85,40 @@
             </div>
         </nav>
         <div id="main-aside" class="d-flex">
-            <aside id="aside"></aside>
+            <aside id="aside">
+                <div id="summary-container">
+                    <div class="text-center text-white fs-5 my-3">
+                        <a class="text-white text-decoration-none" href="{{ route('admin.dashboard') }}">Home</a>
+                    </div>
+                    <div>
+                        <details>
+                            <summary>Projects <i class="fa-solid fa-chevron-down"></i></summary>
+                            <ul>
+                                <li><a href="{{ route('admin.projects.index') }}">All</a></li>
+                                <li><a href="{{ route('admin.projects.create') }}">Create</a></li>
+                            </ul>
+                        </details>
+                    </div>
+                    <div>
+                        <details>
+                            <summary>Category <i class="fa-solid fa-chevron-down"></i></summary>
+                            <ul>
+                                <li><a href="{{ route('admin.categories.index') }}">All</a></li>
+                                <li><a href="{{ route('admin.categories.create') }}">Create</a></li>
+                            </ul>
+                        </details>
+                    </div>
+                    <div>
+                        <details>
+                            <summary>Technologies <i class="fa-solid fa-chevron-down"></i></summary>
+                            <ul>
+                                <li><a href="{{ route('admin.technologies.index') }}">All</a></li>
+                                <li><a href="{{ route('admin.technologies.create') }}">Create</a></li>
+                            </ul>
+                        </details>
+                    </div>
+                </div>
+            </aside>
             <main>
                 @yield('content')
             </main>
@@ -96,12 +129,14 @@
         const hamburger = document.getElementById("hamburger");
         const icon = document.getElementById("icon");
         const main = document.querySelector("main");
+        const summary = document.getElementById("summary-container");
         let flag = false;
         hamburger.addEventListener("click", (event) => {
             flag = !flag;
             if (flag) {
                 aside.style.width = "0%";
                 main.style.width = "100%";
+                summary.style.display = "none";
                 setTimeout(() => {
                     icon.classList.remove('fa-arrow-left')
                     icon.classList.add('fa-arrow-right')
@@ -112,6 +147,7 @@
                     icon.classList.remove('fa-arrow-right')
                     icon.classList.add('fa-arrow-left')
                     main.style.width = "88%";
+                    summary.style.display = "block";
                 }, 200);
             }
         });

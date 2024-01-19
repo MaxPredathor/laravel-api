@@ -1,13 +1,12 @@
 @extends('layouts.app')
 @section('content')
-    <section class="container">
-        <h1>{{ $category->name }}</h1>
+    <section id="categories-show" class="container">
+        <h1>{{ $category->name }} Projects</h1>
         <ul>
             @foreach ($category->projects as $project)
                 <li><a href="{{ route('admin.projects.show', $project->slug) }}">{{ $project->title }}</a></li>
             @endforeach
         </ul>
-
 
         <div>
             <button class="btn btn-primary d-inline-block"><a class="text-white text-decoration-none"

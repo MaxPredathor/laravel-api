@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('content')
-    <section class="container">
+    <section id="projects-edit" class="container">
         <h1>Edit {{ $project->title }} </h1>
         <form action="{{ route('admin.projects.update', $project->slug) }}" method="POST" enctype="multipart/form-data">
             @csrf
@@ -45,7 +45,6 @@
                     <div class="invalid-feedback">{{ $message }}</div>
                 @enderror
             </div>
-            <h5>Techologies</h5>
             {{-- @foreach ($technologies as $item)
                 <div class="d-inline-block m-3">
                     <input type="checkbox" name="technologies[]" value="{{ $item['image'] }}"
@@ -53,8 +52,9 @@
                     <img style="width: 50px" src="{{ $item['image'] }}" alt="{{ $item['name'] }}">
                 </div>
             @endforeach --}}
+            <label for="technologies" class="form-label">Technologies</label> <br>
             @foreach ($technologies as $item)
-                <div class="form-check d-inline-block m-3 @error('technologies') is-invalid @enderror">
+                <div name="technologies" class="form-check d-inline-block m-3 @error('technologies') is-invalid @enderror">
                     @if ($errors->any())
                         <input type="checkbox" class="form-check-input mt-3" name="technologies[]"
                             value="{{ $item->id }}"

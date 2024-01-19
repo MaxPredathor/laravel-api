@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('content')
-    <section class="container">
+    <section id="categories-edit" class="container">
         <h1>Edit {{ $category->name }} </h1>
         <form action="{{ route('admin.categories.update', $category->slug) }}" method="POST" enctype="multipart/form-data">
             @csrf

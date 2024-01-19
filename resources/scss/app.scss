@@ -88,6 +88,53 @@ i {
             height: 100%;
             background-color: #2d2e2d;
             transition: width 0.2s linear;
+            display: flex;
+            justify-content: start;
+            align-items: center;
+            flex-direction: column;
+
+            div {
+                details {
+                    text-decoration: none;
+
+                    &[open] {
+                        summary {
+                            i {
+                                transform: rotate(90deg);
+                                transition: all 0.2s linear;
+                            }
+                        }
+                    }
+
+                    ul {
+                        list-style-type: none;
+                        list-style: none;
+
+                        li {
+                            a {
+                                color: white;
+                                text-decoration: none;
+                            }
+                        }
+                    }
+                    summary {
+                        color: $text-color;
+                        height: 40px;
+                        user-select: none;
+                        font-size: 1.2em;
+
+                        &::marker {
+                            color: transparent;
+                        }
+                        i {
+                            transition: all 0.2s linear;
+                        }
+                    }
+                }
+                // details summary::-webkit-details-marker {
+                //     display: none;
+                // }
+            }
         }
         main {
             width: 88%;
@@ -96,7 +143,16 @@ i {
         }
     }
 }
+#technologies-create,
+#technologies-edit,
+#technologies-show,
 #technologies-index,
+#categories-create,
+#categories-edit,
+#categories-show,
+#projects-create,
+#projects-edit,
+#markdown-content,
 #categories-index,
 #projects-index {
     position: relative;
@@ -106,4 +162,10 @@ i {
     border-radius: 10px;
     padding: 20px;
     margin: 40px 0;
+
+    label {
+        color: white;
+        font-size: 1.1em;
+        padding: 5px 0;
+    }
 }

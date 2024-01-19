@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
-    <section class="container">
-        <h1>{{ $technology->name }}</h1>
+    <section id="technologies-show" class="container">
+        <h1 class="text-capitalize">{{ $technology->name }}</h1>
         <ul>
             @forelse ($technology->projects as $project)
                 <li><a href="{{ route('admin.projects.show', $project->slug) }}">{{ $project->title }}</a></li>

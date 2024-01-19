@@ -84,7 +84,7 @@ class ProjectController extends Controller
         }
         $categories = Category::all();
         $technologies = Technology::all();
-        return view('admin.projects.show', compact('project'));
+        return view('admin.projects.edit', compact('project', 'categories', 'technologies'));
         // $technologies = config('technologies.key');
     }
 
