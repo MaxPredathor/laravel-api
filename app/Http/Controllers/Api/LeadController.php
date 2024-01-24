@@ -5,8 +5,8 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use App\Models\Lead;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facadeds\Validator;
-use Illuminate\Support\Facadeds\Mail;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Mail;
 use App\Mail\NewContact;
 
 class LeadController extends Controller
